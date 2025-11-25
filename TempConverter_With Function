@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+//create two float function for F to C and C to F
+
+float cToFahrenheit(float celsius) { // function to be called for c to f
+    float F; //it's not in the main function bcs this is where the operation begins
+    F = (celsius * 9/5) + 32; // the operation for conversion of C to F
+    return F; //returns the answer to the main function
+}
+
+float fToCelsius(float fahrenheit) { // function to be called for f to c
+    float C; //it's not in the main function bcs this is where the operation begins
+    C = (fahrenheit - 32) * 5/9; // the operation for conversion of F to C
+    return C; //returns the answer to the main function
+}
+
+int main () { //main function
+    char conversion, a, b; //variables in main
+    float tempvalue; 
+    
+    bool invalid = true; //start of the while loop
+    
+    while (invalid) { // while loop
+        cout << "Choose your conversion type.\n";
+        cout << "Enter a for Celsius to Fahrenheit.\n";
+        cout << "Enter b for Fahrenheit to Celsius.\n";
+        cout << "Enter choice:";
+        cin >> conversion; // the letter for the conversion
+        
+        cout << endl;
+        
+        if (conversion == 'a') {
+            cout << "\nTemperature value: "; //asking the temp value in if-else statement
+            cin >> tempvalue;
+            float convertedValue = cToFahrenheit(tempvalue); //create another var as a destination or storage of F value
+            cout << tempvalue << "°C = " << convertedValue << "°F"; // displays the whole conversion
+        }
+        
+        else if (conversion == 'b') {
+            cout << "\nTemperature value: "; 
+            cin >> tempvalue;
+            float convertedValue = fToCelsius(tempvalue); //create another var as a destination or storage of F value
+            cout << endl;
+            cout << tempvalue << "°F = " << convertedValue << "°C"; // displays the whole conversion
+        }
+        
+        else {
+            cout << "Invalid choice. Pick only between a and b."; // default cout for not a & b
+            continue; // continues back 
+        }
+        
+    cout << endl << endl;
+    // the program loops
+    
+    }
+} // end of program
