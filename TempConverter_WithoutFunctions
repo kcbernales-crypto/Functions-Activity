@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+// create main function for temp converter
+int main () {
+    char conversion; // create variables
+    float tempvalue, F, C;
+    
+    bool invalid = true;    
+    
+    while (invalid) { // use the while loop
+        cout << "Choose your conversion type.\n";
+        cout << "\nEnter a for Celsius to Fahrenheit";
+        cout << "\nEnter b for Fahrenheit to Celsius";
+        cout << "Enter choice:";
+        cin >> conversion; // the letter for the conversion
+        
+        cout << endl;
+        
+        switch (conversion) { // using switch statement
+            case 'A': // celsius to fahrenheit
+            case 'a':
+                cout << "\nTemperature value: "; 
+                cin >> tempvalue;
+                F = (tempvalue * 9/5) + 32; // the operation for conversion of C to F
+                cout << tempvalue << "°C = " << F << "°F"; // displays the whole conversion
+                invalid = false;
+                break;
+                
+            case 'B': // fahrenheit to celsius
+            case 'b':
+                cout << "\nTemperature value: ";
+                cin >> tempvalue;
+                C = (tempvalue - 32) * 5/9; // the operation for conversion of F to C
+                cout << tempvalue << "°F = " << C << "°C"; // displays the whole conversion
+                invalid = false;
+                break;
+                
+            default:
+                cout << "Invalid choice. Pick only between a and b"; // default means not a and b
+                continue; // continue back to the start of while loop
+        }
+        cout << endl; 
+        // loop ends after properly converting
+    }
+}
