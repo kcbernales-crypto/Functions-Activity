@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+//create a Function with difference of passbyValue and passbyReference
+//use void to avoid return of value to the main function
+
+void passByValue(int l) { // the function that will be called for passing by value
+    l = l * l; // to square a number
+    cout << "Inside passByValue(): l = " << l << endl; // displays the operation inside the passByValue 
+}
+
+void passByReference(int &w) { // the function that will be called for passing by reference
+    w = w * w; // to square a number
+    cout << "Inside passByReference(): w = " << w << endl;// displays the operation inside the passByReference
+}
+
+//create a main function
+
+int main() { // the main or actual function that will call another function
+    int a = 5; // the actual value of a
+    int b = 5; // the actual value of b
+
+    cout << "Before passByValue(): a = " << a << endl; // a before we call the passByValue function
+    passByValue(a); //calling code
+    cout << "After passByValue(): a = " << a << endl; // a after we call the passByValue function
+    
+    cout << endl;
+
+    cout << "Before passByReference(): b = " << b << endl; // b before we call the passByValue function
+    passByReference(b); //calling code
+    cout << "After passByReference(): b = " << b << endl; // b after we call the passByValue function
+
+    return 0;
+// the program ends
+}
