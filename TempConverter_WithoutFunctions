@@ -12,7 +12,7 @@ int main () {
         cout << "Choose your conversion type.\n";
         cout << "\nEnter a for Celsius to Fahrenheit";
         cout << "\nEnter b for Fahrenheit to Celsius";
-        cout << "Enter choice:";
+        cout << "\nEnter choice:";
         cin >> conversion; // the letter for the conversion
         
         cout << endl;
